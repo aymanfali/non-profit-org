@@ -1,0 +1,58 @@
+/* Mobile First Approach */
+
+:root {
+  /* Light Theme (default) */
+  --color-text: #333;
+  --color-bg: #fff;
+  --color-primary: #0066cc;
+  
+}
+
+:root:has(#theme-toggle:checked) {
+  /* Dark Theme */
+  --color-text: #f0f0f0;
+  --color-bg: #121212;
+  --color-primary: #4dabf7;
+  
+}
+
+* {
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  transition: 0.5s;
+}
+
+html {
+  font-size: 1rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 1.125rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
