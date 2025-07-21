@@ -5,7 +5,7 @@
   --color-text: #333;
   --color-bg: #fff;
   --color-primary: #0066cc;
-  
+  /* Add other light theme variables */
 }
 
 :root:has(#theme-toggle:checked) {
@@ -13,7 +13,11 @@
   --color-text: #f0f0f0;
   --color-bg: #121212;
   --color-primary: #4dabf7;
-  
+  /* Add other dark theme variables */
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
 * {
@@ -29,6 +33,9 @@
 
 html {
   font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
@@ -36,6 +43,104 @@ body {
   padding: 0;
   color: var(--color-text);
   background-color: var(--color-bg);
+}
+
+ul > li {
+  list-style: none;
+}
+
+.main-nav {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  padding: 20px;
+}
+
+.main-nav .logo img {
+  width: 150px;
+}
+
+.main-nav nav ul {
+  position: absolute;
+  display: none;
+  gap: 20px;
+  background-color: var(--color-primary);
+  width: 100%;
+  left: 0;
+  top: 80px;
+}
+
+.main-nav nav ul li {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.main-nav nav ul li:not(li:last-child) {
+  border-bottom: 1px solid var(--color-text);
+}
+
+.main-nav nav ul li a {
+  color: var(--color-bg);
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+}
+
+.main-nav nav ul li::after,
+a::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.main-nav nav ul li:hover::after,
+a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.mobile-nav-trigger {
+  border: 1px solid white;
+  border-radius: 50%;
+  background: transparent;
+  padding: 5px 10px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+}
+
+.hero .text{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero .title {
+  padding: 10px 0;
+}
+
+.hero img{
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -48,6 +153,19 @@ body {
   html {
     font-size: 1.25rem;
   }
+
+  .mobile-nav-trigger {
+    display: none;
+  }
+
+  .main-nav nav ul {
+    position: relative;
+    display: flex;
+    top: 0;
+  }
+ .main-nav nav ul li:not(li:last-child) {
+  border-bottom: none;
+}
 }
 
 @media screen and (min-width: 1200px) {
