@@ -5,6 +5,8 @@
   --color-text: #333;
   --color-bg: #fff;
   --color-primary: #0066cc;
+  --box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --line-height: 1.4;
 }
 
 :root:has(#theme-toggle:checked) {
@@ -158,46 +160,86 @@ a:hover::after {
 
 .hero .description {
   color: var(--color-bg);
-  line-height: 1.5;
+  line-height: var(--line-height);
   z-index: 1;
 }
 
 /* intro section styles */
 
-.intro{
-    padding: 10px;
-    
+.intro,
+.impact {
+  padding: 10px;
 }
 
-.intro .title{
-    text-align: center;
-    margin: 10px;
-    position: relative;
+.intro h1.title,
+.impact h1.title {
+  text-align: center;
+  margin: 50px;
+  position: relative;
 }
 
-.intro .title::after{
-    position: absolute;
-    left: 50%;
-    top: 100%;
-    transform: translate(-50%, -50%);
-    content: "";
-    width: 200px;
-    height: 2px;
-    margin: 10px 0;
-    background-color: var(--color-primary);
+.intro h1.title::after,
+.impact h1.title::after {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+  content: "";
+  width: 200px;
+  height: 2px;
+  margin: 10px 0;
+  background-color: var(--color-primary);
 }
 
-.intro .description{
-    margin: 20px 10px;
+.intro .description {
+  margin: 20px 10px;
 }
 
-.intro .description p{
-    padding: 10px;
-    line-height: 1.4;
+.intro .description p {
+  padding: 10px;
+  line-height: var(--line-height);
 }
+
+/* impact section */
+
+.impact-activities {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  grid-auto-flow: row;
+  margin: 20px;
+  justify-content: center;
+}
+
+.impact-activities .item {
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+}
+
+.impact-activities .item img {
+  border-radius: 15px 15px 0 0;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+
+.impact-activities h1.title{
+    margin-bottom: 20px;
+}
+
+.impact-activities .title {
+  padding: 15px;
+  line-height: var(--line-height);
+}
+
 @media screen and (min-width: 768px) {
   html {
     font-size: 1.125rem;
+  }
+
+  .impact-activities {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -217,6 +259,10 @@ a:hover::after {
   }
   .main-nav nav ul li:not(li:last-child) {
     border-bottom: none;
+  }
+
+  .impact-activities {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
