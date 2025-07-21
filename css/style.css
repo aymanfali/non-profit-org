@@ -119,6 +119,8 @@ a:hover::after {
   cursor: pointer;
 }
 
+/* hero section styles */
+
 .hero {
   position: relative;
   text-align: center;
@@ -160,6 +162,39 @@ a:hover::after {
   z-index: 1;
 }
 
+/* intro section styles */
+
+.intro{
+    padding: 10px;
+    
+}
+
+.intro .title{
+    text-align: center;
+    margin: 10px;
+    position: relative;
+}
+
+.intro .title::after{
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+    content: "";
+    width: 200px;
+    height: 2px;
+    margin: 10px 0;
+    background-color: var(--color-primary);
+}
+
+.intro .description{
+    margin: 20px 10px;
+}
+
+.intro .description p{
+    padding: 10px;
+    line-height: 1.4;
+}
 @media screen and (min-width: 768px) {
   html {
     font-size: 1.125rem;
