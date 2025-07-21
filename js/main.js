@@ -11,22 +11,22 @@ mobileNavTrigger.addEventListener("click", () => {
 
 let impactActivities = [
   {
-    image: "../assets/images/impact_1.jpg",
+    image: "assets/images/impact_1.jpg",
     title:
       "Working where it counts: UNESCO leads local initiatives and develops tools to safeguard World Heritage",
   },
   {
-    image: "../assets/images/impact_2.jpg",
+    image: "assets/images/impact_2.jpg",
     title:
       "Bangkok sets the pace for AI Ethics: Highlights from UNESCO’s 3rd Global Forum on the Ethics of AI",
   },
   {
-    image: "../assets/images/higher education - uganda_0.jpg",
+    image: "assets/images/higher education - uganda_0.jpg",
     title:
       "Record number of higher education students highlights global need for recognition of qualifications",
   },
   {
-    image: "../assets/images/story_whc_mafagascar.JPG.webp",
+    image: "assets/images/story_whc_mafagascar.JPG.webp",
     title:
       "Caribbean cuisine transcends borders thanks to UNESCO’s Transcultura programme",
   },
