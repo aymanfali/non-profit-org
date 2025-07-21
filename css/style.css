@@ -63,7 +63,7 @@ ul > li {
 
 .main-nav nav ul {
   position: absolute;
-  display: block;
+  display: none;
   gap: 20px;
   background-color: var(--color-primary);
   width: 100%;
