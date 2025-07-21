@@ -1,4 +1,4 @@
-const mobileNav = document.querySelector(".main-nav nav ul");
+const mobileNav = document.querySelector(".main-nav .nav ul");
 const mobileNavTrigger = document.querySelector(".mobile-nav-trigger");
 
 mobileNavTrigger.addEventListener("click", () => {
