@@ -5,8 +5,11 @@
   --color-text: #333;
   --color-bg: #fff;
   --color-primary: #0066cc;
+  --gray-color: #f1f4f6;
   --box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   --line-height: 1.4;
+  --icon-size: 24px;
+  --filter: brightness(0) saturate(100%) invert(25%) sepia(91%) saturate(1723%) hue-rotate(195deg) brightness(98%) contrast(103%);
 }
 
 :root:has(#theme-toggle:checked) {
@@ -22,7 +25,6 @@
 
 * {
   font-family: inherit;
-  font-weight: inherit;
   font-style: inherit;
   padding: 0;
   margin: 0;
@@ -164,23 +166,23 @@ a:hover::after {
   z-index: 1;
 }
 
-.hero .call-to-action{
-    border: none;
-    outline: none;
-    box-shadow: var(--box-shadow);
-    padding: 10px 20px;
-    margin: 20px;
-    background-color: var(--color-primary);
-    color: var(--color-bg);
-    z-index: 1;
-    border-radius: 15px;
-    cursor: pointer;
+.hero .call-to-action {
+  border: none;
+  outline: none;
+  box-shadow: var(--box-shadow);
+  padding: 10px 20px;
+  margin: 20px;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  z-index: 1;
+  border-radius: 15px;
+  cursor: pointer;
 }
 
-.hero .call-to-action:hover{
-    background-color: var(--color-bg);
-    color: var(--color-primary);
-    outline: 2px solid var(--color-primary);
+.hero .call-to-action:hover {
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  outline: 2px solid var(--color-primary);
 }
 
 /* intro section styles */
@@ -242,9 +244,8 @@ a:hover::after {
   object-fit: cover;
 }
 
-
-.impact-activities h1.title{
-    margin-bottom: 20px;
+.impact-activities h1.title {
+  margin-bottom: 20px;
 }
 
 .impact-activities .title {
@@ -252,12 +253,88 @@ a:hover::after {
   line-height: var(--line-height);
 }
 
+/* footer section */
+
+footer {
+  background: var(--color-primary);
+  padding: 20px;
+}
+
+footer .logo{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+footer .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  grid-auto-flow: row;
+  margin: 20px;
+  text-align: center;
+  color: var(--color-bg);
+}
+
+footer .grid a {
+  text-decoration: none;
+  color: var(--color-bg);
+}
+
+footer .grid .site-map {
+  margin: 10px;
+}
+
+footer .grid .site-map ul li {
+  padding: 10px;
+}
+footer .grid .site-map ul li:hover::before {
+  content: "→";
+  margin-right: 10px;
+}
+
+footer h3 {
+  border-bottom: var(--color-bg) 1px solid;
+  padding: 10px;
+  margin: 10px;
+  color: var(--color-bg);
+}
+
+footer .follow-us {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+footer .follow-us .follow-links{
+    display: flex;
+}
+
+footer .follow-us .follow-links a{
+    margin: 5px;
+    background-color: var(--color-bg);
+    padding: 5px 5px 0 5px;
+    border-radius: 10px;
+}
+footer .follow-us .follow-links a:hover{
+    transform: translateY(-5px);
+}
+
+footer .follow-us .follow-links a img {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  filter: var(--filter);
+}
+
+
+
 @media screen and (min-width: 768px) {
   html {
     font-size: 1.125rem;
   }
 
-  .impact-activities {
+  .impact-activities,
+  .grid {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -280,7 +357,8 @@ a:hover::after {
     border-bottom: none;
   }
 
-  .impact-activities {
+  .impact-activities,
+  .grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
