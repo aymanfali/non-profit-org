@@ -169,8 +169,7 @@ ul > li {
   padding: 15px;
 }
 
-.main-nav nav ul li::after,
-a::after {
+.main-nav nav ul li::after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
