@@ -5,6 +5,7 @@
   --color-text-main: #0d1c29; /* with light colored background */
   --color-text-sec: #fff; /* with dark colored background */
   --color-primary: #0066cc;
+  --danger-color: rgb(255, 58, 58);
   --horizontal-line: #0066cc;
   --color-bg: #ffffff;
   --gray-color: #f1f4f6;
@@ -15,6 +16,8 @@
     hue-rotate(195deg) brightness(98%) contrast(103%);
   --filter-white: brightness(0) saturate(100%) invert(100%) sepia(97%)
     saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%);
+  --filter-primary: brightness(0) saturate(100%) invert(25%) sepia(91%)
+    saturate(1723%) hue-rotate(195deg) brightness(98%) contrast(103%);
 }
 
 :root:has(#theme-toggle:checked) {
@@ -22,12 +25,16 @@
   --color-text-main: #ffffff; /* with light colored background */
   --color-text-sec: #ffffff; /* with dark colored background */
   --color-primary: #0d1c29;
+  --danger-color: rgb(255, 58, 58);
   --horizontal-line: #0066cc;
   --color-bg: #0d1c29;
   --gray-color: #f1f4f6;
   --box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  --filter: brightness(0) saturate(100%) invert(7%) sepia(51%) saturate(984%) hue-rotate(170deg) brightness(90%) contrast(93%);
+  --filter: brightness(0) saturate(100%) invert(7%) sepia(51%) saturate(984%)
+    hue-rotate(170deg) brightness(90%) contrast(93%);
   --filter-white: brightness(0) saturate(100%) invert(100%) sepia(97%)
+    saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%);
+  --filter-primary: brightness(0) saturate(100%) invert(100%) sepia(97%)
     saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%);
 }
 
@@ -119,9 +126,9 @@ ul > li {
   list-style: none;
 }
 
-.right{
-    display: flex;
-    gap: 10px;
+.right {
+  display: flex;
+  gap: 10px;
 }
 
 .main-nav {
@@ -457,8 +464,93 @@ footer .follow-us .follow-links a img {
   filter: var(--filter);
 }
 
-footer .copy-write{
-    color: var(--color-text-sec);
+footer .copy-write {
+  color: var(--color-text-sec);
+}
+
+/* contact-us page */
+
+.icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  filter: var(--filter-primary);
+}
+.contact {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 10%;
+}
+
+.contact .form {
+  position: relative;
+}
+
+.contact .field {
+  position: relative;
+  display: block;
+}
+
+.contact .field img {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  position: absolute;
+  left: -25px;
+  top: 15px;
+}
+
+.contact .input {
+  padding: 10px;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow);
+  border: 0;
+  margin: 5px;
+  width: 100%;
+}
+
+.contact textarea {
+  resize: none;
+  background-color: var(--color-bg);
+  color: var(--color-text-sec);
+}
+
+.contact input {
+  background-color: var(--color-bg);
+  color: var(--color-text-sec);
+}
+
+.contact .submit {
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border: 1px solid var(--color-primary);
+  outline: none;
+  background-color: var(--color-text-sec);
+  color: var(--color-primary);
+  border-radius: 20px;
+}
+
+.contact .submit:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-sec);
+  outline: 1px solid var(--color-text-main);
+}
+
+.contact .submit:disabled {
+  cursor: not-allowed;
+  background-color: var(--gray-color);
+  color: var(--danger-color);
+}
+
+[class$="-error"] {
+  display: none;
+  padding: 5px 10px 5px 10px;
+  text-align: start;
+  margin: 0 0 10px 10px;
+  color: var(--danger-color);
+  font-size: small;
 }
 
 @media screen and (min-width: 768px) {
@@ -475,8 +567,12 @@ footer .copy-write{
     box-shadow: none;
   }
 
-  .search form{
+  .search form {
     padding: 20px 10%;
+  }
+
+  .contact {
+    margin: 0 15%;
   }
 }
 
