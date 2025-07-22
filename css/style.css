@@ -585,6 +585,46 @@ section {
   line-height: var(--line-height);
 }
 
+
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: var(--primary-color);
+  color: var(--forth-color);
+  padding: 15px 15px 10px 15px;
+  margin: 30px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: var(--box-shadow);
+  z-index: 1000;
+}
+
+#back-to-top.show {
+  display: block;
+  animation: go-to-top 1s ease 0s 1 normal both;
+}
+
+#back-to-top:hover {
+  cursor: pointer;
+  color: var(--primary-color);
+  background-color: var(--forth-color);
+  outline: 1px solid var(--primary-color);
+}
+
+@keyframes go-to-top {
+  0% {
+    opacity: 0;
+    transform: translateY(250px) rotate(200deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
 @media screen and (min-width: 768px) {
   html {
     font-size: 1.125rem;

@@ -9,6 +9,20 @@ mobileNavTrigger.addEventListener("click", () => {
   }
 });
 
+const scrollToTopBtn = document.getElementById("back-to-top");
+
+window.onscroll = () => {
+  document.body.scrollTop > 300 || document.documentElement.scrollTop > 300
+    ? scrollToTopBtn.classList.add("show")
+    : scrollToTopBtn.classList.remove("show");
+};
+
+scrollToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+  });
+});
+
 const searchBtn = document.querySelector(".search-button");
 const submitSearch = document.querySelector("#submit-search");
 const searchForm = document.querySelector(".search form");
@@ -49,7 +63,7 @@ const emailErrorMessage = document.querySelector(".email-error");
 const subjectErrorMessage = document.querySelector(".subject-error");
 const messageErrorMessage = document.querySelector(".message-error");
 
-const name = document.querySelector("#name");
+const uname = document.querySelector("#name");
 const email = document.querySelector("#email");
 const subject = document.querySelector("#subject");
 const message = document.querySelector("#message");
@@ -66,8 +80,8 @@ function updateSubmitButton() {
     : (submit.disabled = false);
 }
 
-name.addEventListener("input", () => {
-  const value = name.value;
+uname.addEventListener("input", () => {
+  const value = uname.value;
 
   if (value.length < 3) {
     nameError = "Your name must contain at least 3 characters";
@@ -155,8 +169,8 @@ submit.addEventListener("click", (e) => {
     subject.value == "" ||
     message.value == ""
   ) {
-      alert("please fill all fields");
-      submit.disabled = true
+    alert("please fill all fields");
+    submit.disabled = true;
   } else {
     if (
       confirm(`Your message of ${subject.value} will be sent to ${email.value}`)
