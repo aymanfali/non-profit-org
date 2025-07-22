@@ -553,6 +553,38 @@ footer .copy-write {
   font-size: small;
 }
 
+/* about us page */
+
+section {
+  padding: 20px;
+}
+
+.about-us .title {
+  text-align: center;
+  margin: 30px;
+}
+
+.about-us .history,
+.about-us .values {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.about-us img {
+  max-width: 350px;
+  height: auto;
+  margin: auto;
+  border-radius: 15px;
+}
+
+.about-us .description {
+  margin: 30px ;
+  line-height: var(--line-height);
+}
+
 @media screen and (min-width: 768px) {
   html {
     font-size: 1.125rem;
@@ -597,6 +629,17 @@ footer .copy-write {
   .impact-activities,
   .grid {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .about-us .history {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .about-us .values {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
   }
 }
 
