@@ -146,21 +146,24 @@ message.addEventListener("input", () => {
 
 updateSubmitButton();
 
-const sendMessage = document.querySelector("#send-message");
-
-sendMessage.addEventListener("click", (e) => {
+submit.addEventListener("click", (e) => {
   e.preventDefault();
 
   if (
-    confirm(`Your message of ${subject.value} will be sent to ${email.value}`)
+    name.value == "" ||
+    email.value == "" ||
+    subject.value == "" ||
+    message.value == ""
   ) {
-    alert("Your message was sent successfully!");
+      alert("please fill all fields");
+      submit.disabled = true
   } else {
-    alert("Your message was canceled!");
+    if (
+      confirm(`Your message of ${subject.value} will be sent to ${email.value}`)
+    ) {
+      alert("Your message was sent successfully!");
+    } else {
+      alert("Your message was canceled!");
+    }
   }
-
-  name.value = "";
-  email.value = "";
-  subject.value = "";
-  message.value = "";
 });
