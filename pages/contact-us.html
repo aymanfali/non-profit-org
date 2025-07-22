@@ -26,8 +26,8 @@
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="impacts.html">Impacts</a> </li>
-                    <li><a href="#">News</a> </li>
-                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="news.html">News</a> </li>
+                    <li><a href="#">Contact Us</a></li>
                     <li><a href="">About Us</a></li>
                 </ul>
             </nav>
@@ -55,14 +55,36 @@
 
     <main>
         <section class="hero">
-            <h1 class="title">UNESCO News</h1>
+            <h1 class="title">Contact Us</h1>
             <p class="description">
             </p>
         </section>
 
 
-        <section class="impact">
-            <div class="impact-activities"></div>
+        <section class="contact" id="contact-us">
+            <form class="form" action="" method="post">
+                <div class="field">
+                    <img class="icon" src="../assets/icons/user-solid.svg" alt="name">
+                    <input class="input" type="text" name="name" id="name" placeholder="Your Name" required>
+                </div>
+                <p class="name-error">invalid name</p>
+                <div class="field">
+                    <img class="icon" src="../assets/icons/envelope-solid.svg " alt="email">
+                    <input class="input" type="email" name="email" id="email" placeholder="Your email" required>
+                </div>
+                <p class="email-error"></p>
+                <div class="field">
+                    <img class="icon" src="../assets/icons/comment-regular.svg " alt="subject">
+                    <input class="input" type="text" name="subject" id="subject" placeholder="Your subject" required>
+                </div>
+                <p class="subject-error"></p>
+                <div class="field">
+                    <img class="icon" src="../assets/icons/message-solid.svg " alt="message">
+                    <textarea rows="5" class="input" name="message" id="message" placeholder="Your message" required></textarea>
+                </div>
+                <p class="message-error"></p>
+                <button id="send-message" type="submit" class="submit">Send</button>
+            </form>
         </section>
     </main>
 
@@ -95,8 +117,8 @@
                     <ul>
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="impacts.html">Impacts</a> </li>
-                        <li><a href="#">News</a> </li>
-                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="news.html">News</a> </li>
+                        <li><a href="#">Contact Us</a></li>
                         <li><a href="">About Us</a></li>
                     </ul>
                 </nav>
@@ -110,7 +132,6 @@
 
     <!-- JavaScript -->
     <script src="../js/main.js"></script>
-    <script src="../js/impacts.js"></script>
     
 </body>
 
