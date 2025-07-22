@@ -49,3 +49,18 @@ impactActivities.forEach((item) => {
 
   element.append(impactImage, impactTitle);
 });
+
+
+const searchBtn = document.querySelector(".search-button");
+const submitSearch = document.querySelector("#submit-search");
+const searchForm = document.querySelector(".search form");
+const searchInput = document.querySelector(".search-input");
+
+searchBtn.addEventListener("click", () => {
+    searchForm.classList.toggle("hide-search-form")
+})
+
+submitSearch.addEventListener("click", (e) => {
+    e.preventDefault()
+    alert(`You want to search for \"${searchInput.value}\"`)
+})
