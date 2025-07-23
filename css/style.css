@@ -372,6 +372,11 @@ a:hover::after {
   box-shadow: var(--box-shadow);
 }
 
+.impact-activities .item:hover{
+  color: var(--horizontal-line);
+  cursor: pointer;
+}
+
 .impact-activities .item img {
   border-radius: 15px 15px 0 0;
   width: 100%;
@@ -384,8 +389,17 @@ a:hover::after {
 }
 
 .impact-activities .title {
-  padding: 15px;
+  padding-bottom: 15px;
   line-height: var(--line-height);
+}
+
+.impact-activities .text{
+  padding: 20px;
+}
+
+.impact-activities .read-more{
+  float: right;
+  margin-bottom: 10px;
 }
 
 /* footer section */
