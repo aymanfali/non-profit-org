@@ -24,7 +24,7 @@ let impactActivities = [
 
 const impactsGrid = document.querySelector(".impact-activities");
 
-impactActivities.forEach((item) => {
+impactActivities.forEach((item, index) => {
   const element = document.createElement("div");
   element.className = "item";
   impactsGrid.appendChild(element);
@@ -33,9 +33,22 @@ impactActivities.forEach((item) => {
   impactImage.src = item.image;
   impactImage.alt = item.title;
 
+  const text = document.createElement("div");
+  text.className = "text";
+  
   const impactTitle = document.createElement("p");
   impactTitle.className = "title";
   impactTitle.textContent = item.title;
 
-  element.append(impactImage, impactTitle);
+   const impactReadMore = document.createElement("a");
+   impactReadMore.className = "read-more";
+   impactReadMore.textContent = "Read more ...";
+  text.append(impactTitle, impactReadMore)
+
+  element.append(impactImage, text);
+
+  element.addEventListener("click", () => {
+    const impactId = index; // or use a unique ID if available
+    window.location.href = `impact-details.html?id=${impactId}`;
+  });
 });
