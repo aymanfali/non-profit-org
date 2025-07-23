@@ -110,7 +110,7 @@ input:checked + .slider:before {
 
 html {
   /* fluid typography */
-  font-size: clamp(16px, 5vw, 26px);
+  font-size: max(12px, 0.1vw);
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -698,6 +698,9 @@ section {
 }
 
 @media screen and (min-width: 768px) {
+  html {
+    font-size: max(12px, 0.9vw);
+  }
   .impact-activities,
   .grid {
     grid-template-columns: 1fr 1fr;
@@ -725,6 +728,9 @@ section {
 }
 
 @media screen and (min-width: 992px) {
+  html {
+    font-size: max(16px, 0.7vw);
+  }
   .mobile-nav-trigger {
     display: none;
   }
@@ -757,7 +763,8 @@ section {
 
 @media screen and (min-width: 1200px) {
   body {
-    max-width: 1024px;
+    width: 1024px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 }
