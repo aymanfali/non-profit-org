@@ -109,7 +109,8 @@ input:checked + .slider:before {
 }
 
 html {
-  font-size: 1rem;
+  /* fluid typography */
+  font-size: clamp(16px, 5vw, 26px);
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -581,10 +582,9 @@ section {
 }
 
 .about-us .description {
-  margin: 30px ;
+  margin: 30px;
   line-height: var(--line-height);
 }
-
 
 #back-to-top {
   display: none;
@@ -625,18 +625,14 @@ section {
   }
 }
 
-.active::after{
+.active::after {
   width: 5px !important;
 }
-.active:hover::after{
+.active:hover::after {
   width: 0 !important;
 }
 
 @media screen and (min-width: 768px) {
-  html {
-    font-size: 1.125rem;
-  }
-
   .impact-activities,
   .grid {
     grid-template-columns: 1fr 1fr;
@@ -656,10 +652,6 @@ section {
 }
 
 @media screen and (min-width: 992px) {
-  html {
-    font-size: 1.25rem;
-  }
-
   .mobile-nav-trigger {
     display: none;
   }
