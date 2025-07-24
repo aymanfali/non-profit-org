@@ -11,7 +11,7 @@ let impactActivities = [
       "Bangkok sets the pace for AI Ethics: Highlights from UNESCO’s 3rd Global Forum on the Ethics of AI",
   },
   {
-    image: "assets/images/higher education - uganda_0.jpg",
+    image: "assets/images/adg-ed-thinkpiece-esd_0.jpg",
     title:
       "Record number of higher education students highlights global need for recognition of qualifications",
   },

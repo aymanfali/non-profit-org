@@ -14,7 +14,7 @@ let impactActivities = [
       "With over 1,200 participants from 88 different countries, 35+ ministers, and 13 intergovernmental bodies, the 3rd Global Forum on the Ethics of AI relayed a clear message: ethics is not at odds with innovation, it is instrumental to its advancement. With 22 thematic sessions and 11 side-events, the Global Forum covered essential topics such as gender, environment, health, disaster risk reduction, disabilities, education, culture, neurotechnology, quantum computing, and judicial systems. With 33 representatives from Small Island Developing States (SIDS), the event amplified voices from Asia, Africa and Latin America for equitable, human-centered AI to help address national and regional challenges. ",
   },
   {
-    image: "../assets/images/higher education - uganda_0.jpg",
+    image: "../assets/images/adg-ed-thinkpiece-esd_0.jpg",
     title:
       "Record number of higher education students highlights global need for recognition of qualifications",
     content:

@@ -7,7 +7,7 @@ let news = [
       "Yes, it was a wonderful honour. It's called Priscillagrewite-Y and it was discovered in Jordan, near the city of Amman. It's a garnet. Garnets are important minerals, not only for gemstones, but also because they can tell us things about the origin of rocks. The only problem is... I can't wear my garnet! It’s too tiny to be seen by the naked eye. You have to have very special equipment",
   },
   {
-    image: "../assets/images/HII Event HD Photo_UNESCO.jpeg",
+    image: "../assets/images/HII_Event_HD_Photo_UNESCO.jpeg",
     title:
       "UNESCO positioned as global leader in Transforming Education at SDG Action Weekend’s High-Impact Initiative Event",
     date: "5 October 2023",
