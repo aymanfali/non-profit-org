@@ -56,6 +56,7 @@ news.forEach((item, index) => {
 
   element.append(newsImage, text);
 
+// add news id to link 
   element.addEventListener("click", () => {
     const newsId = index; // or use a unique ID if available
     window.location.href = `news-details.html?id=${newsId}`;

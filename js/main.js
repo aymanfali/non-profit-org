@@ -11,6 +11,7 @@ mobileNavTrigger.addEventListener("click", () => {
 
 const scrollToTopBtn = document.getElementById("back-to-top");
 
+// watch window scroll
 window.onscroll = () => {
   document.body.scrollTop > 300 || document.documentElement.scrollTop > 300
     ? scrollToTopBtn.classList.add("show")
@@ -39,6 +40,7 @@ submitSearch.addEventListener("click", (e) => {
 
 const toggleTheme = document.querySelector("#theme-toggle");
 
+// switch between dark and light theme
 toggleTheme.addEventListener("change", (e) => {
   if (e.target.checked) {
     localStorage.setItem("theme", "dark");
@@ -49,7 +51,7 @@ toggleTheme.addEventListener("change", (e) => {
   }
 });
 
-// Initialize the theme on page load
+// Initialize theme on page load
 if (localStorage.getItem("theme") === "dark") {
   toggleTheme.checked = true;
   document.documentElement.setAttribute("data-theme", "dark");
@@ -85,7 +87,7 @@ uname.addEventListener("input", () => {
 
   if (value.length < 3) {
     nameError = "Your name must contain at least 3 characters";
-  } else if (!/^[a-zA-Z ]+$/.test(value)) {
+  } else if (!/^[a-zA-Z ]+$/.test(value)) { // accept only alphabets a - z
     nameError = "Please enter a valid name (letters and spaces only)";
   } else {
     nameError = "";
@@ -104,6 +106,7 @@ uname.addEventListener("input", () => {
 email.addEventListener("input", () => {
   const value = email.value;
 
+  // restrict to follow email syntax
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
     emailError = "Please enter a valid email address";
   } else {

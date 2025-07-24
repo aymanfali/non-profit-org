@@ -35,6 +35,7 @@ const impactDate = document.querySelector(".date");
 const impactImage = document.querySelector(".hero");
 const goBackLink = document.querySelector(".back");
 
+// apply following when dom is ready
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const impactId = params.get("id");
