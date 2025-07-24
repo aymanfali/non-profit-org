@@ -35,17 +35,19 @@ impactActivities.forEach((item, index) => {
 
   const text = document.createElement("div");
   text.className = "text";
-  
+
   const impactTitle = document.createElement("p");
   impactTitle.className = "title";
   impactTitle.textContent = item.title;
 
-   const impactReadMore = document.createElement("a");
-   impactReadMore.className = "read-more";
-   impactReadMore.textContent = "Read more ...";
-  text.append(impactTitle, impactReadMore)
+  const impactReadMore = document.createElement("a");
+  impactReadMore.className = "read-more";
+  impactReadMore.textContent = "Read more ...";
+  text.append(impactTitle, impactReadMore);
 
   element.append(impactImage, text);
+
+  // add imoact id to link
 
   element.addEventListener("click", () => {
     const impactId = index; // or use a unique ID if available
