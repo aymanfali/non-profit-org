@@ -407,6 +407,7 @@ a:hover::after {
 footer {
   background: var(--color-primary);
   padding: 20px;
+  position: relative;
 }
 
 footer .logo {
@@ -675,7 +676,7 @@ section {
   padding: 15px 15px 10px 15px;
   margin: 30px;
   border-radius: 50%;
-  border: none;
+  border: 1px solid var(--color-text-sec);
   box-shadow: var(--box-shadow);
   z-index: 1000;
 }
