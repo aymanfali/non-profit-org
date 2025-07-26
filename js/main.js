@@ -1,186 +1,190 @@
+// Mobile Navigation Toggle
 const mobileNav = document.querySelector(".main-nav .nav ul");
 const mobileNavTrigger = document.querySelector(".mobile-nav-trigger");
 
 mobileNavTrigger.addEventListener("click", () => {
-  if (mobileNav.style.display == "none") {
-    mobileNav.style.display = "block";
-  } else {
-    mobileNav.style.display = "none";
-  }
+  mobileNav.classList.toggle("hidden");
+  mobileNav.classList.toggle("block");
 });
 
+// Back to Top Button
 const scrollToTopBtn = document.getElementById("back-to-top");
 
-// watch window scroll
-window.onscroll = () => {
-  document.body.scrollTop > 300 || document.documentElement.scrollTop > 300
-    ? scrollToTopBtn.classList.add("show")
-    : scrollToTopBtn.classList.remove("show");
-};
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollToTopBtn.classList.add("show");
+  } else {
+    scrollToTopBtn.classList.remove("show");
+  }
+});
 
 scrollToTopBtn.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
+    behavior: "smooth",
   });
 });
 
+// Search Functionality
 const searchBtn = document.querySelector(".search-button");
-const submitSearch = document.querySelector("#submit-search");
 const searchForm = document.querySelector(".search form");
 const searchInput = document.querySelector(".search-input");
 
 searchBtn.addEventListener("click", () => {
-  searchForm.classList.toggle("hide-search-form");
+  searchForm.classList.toggle("hidden");
 });
 
-submitSearch.addEventListener("click", (e) => {
-  e.preventDefault();
-  alert(`You want to search for \"${searchInput.value}\"`);
-});
-
+// Theme Toggle
 const toggleTheme = document.querySelector("#theme-toggle");
 
-// switch between dark and light theme
 toggleTheme.addEventListener("change", (e) => {
   if (e.target.checked) {
     localStorage.setItem("theme", "dark");
-    document.documentElement.setAttribute("data-theme", "dark");
+    document.documentElement.classList.add("dark");
   } else {
     localStorage.setItem("theme", "light");
-    document.documentElement.setAttribute("data-theme", "light");
+    document.documentElement.classList.remove("dark");
   }
 });
 
-// Initialize theme on page load
+// Initialize theme
 if (localStorage.getItem("theme") === "dark") {
   toggleTheme.checked = true;
-  document.documentElement.setAttribute("data-theme", "dark");
+  document.documentElement.classList.add("dark");
 } else {
   toggleTheme.checked = false;
-  document.documentElement.setAttribute("data-theme", "light");
+  document.documentElement.classList.remove("dark");
 }
 
-const nameErrorMessage = document.querySelector(".name-error");
-const emailErrorMessage = document.querySelector(".email-error");
-const subjectErrorMessage = document.querySelector(".subject-error");
-const messageErrorMessage = document.querySelector(".message-error");
+// Form Validation
+const errorMessages = {
+  name: document.querySelector(".name-error"),
+  email: document.querySelector(".email-error"),
+  subject: document.querySelector(".subject-error"),
+  message: document.querySelector(".message-error"),
+};
 
-const uname = document.querySelector("#name");
-const email = document.querySelector("#email");
-const subject = document.querySelector("#subject");
-const message = document.querySelector("#message");
-const submit = document.querySelector(".submit");
+const formInputs = {
+  name: document.querySelector("#name"),
+  email: document.querySelector("#email"),
+  subject: document.querySelector("#subject"),
+  message: document.querySelector("#message"),
+};
 
-let nameError = "";
-let emailError = "";
-let subjectError = "";
-let messageError = "";
+const submitBtn = document.querySelector(".submit");
+
+let errors = {
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+};
 
 function updateSubmitButton() {
-  nameError || emailError || subjectError || messageError
-    ? (submit.disabled = true)
-    : (submit.disabled = false);
+  submitBtn.disabled = Object.values(errors).some((error) => error !== "");
 }
 
-uname.addEventListener("input", () => {
-  const value = uname.value;
-
+function validateName(value) {
   if (value.length < 3) {
-    nameError = "Your name must contain at least 3 characters";
-  } else if (!/^[a-zA-Z ]+$/.test(value)) { // accept only alphabets a - z
-    nameError = "Please enter a valid name (letters and spaces only)";
-  } else {
-    nameError = "";
+    return "Your name must contain at least 3 characters";
   }
-
-  if (nameError) {
-    nameErrorMessage.style.display = "block";
-    nameErrorMessage.innerHTML = nameError;
-  } else {
-    nameErrorMessage.style.display = "none";
+  if (!/^[a-zA-Z ]+$/.test(value)) {
+    return "Please enter a valid name (letters and spaces only)";
   }
+  return "";
+}
 
-  updateSubmitButton();
-});
-
-email.addEventListener("input", () => {
-  const value = email.value;
-
-  // restrict to follow email syntax
+function validateEmail(value) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-    emailError = "Please enter a valid email address";
-  } else {
-    emailError = "";
+    return "Please enter a valid email address";
   }
+  return "";
+}
 
-  if (emailError) {
-    emailErrorMessage.style.display = "block";
-    emailErrorMessage.innerHTML = emailError;
-  } else {
-    emailErrorMessage.style.display = "none";
+function validateField(value, fieldName) {
+  if (value === "") {
+    return `Please enter your ${fieldName}`;
   }
+  if (value.length < 10) {
+    return `${
+      fieldName.charAt(0).toUpperCase() + fieldName.slice(1)
+    } must be at least 10 characters`;
+  }
+  return "";
+}
 
+// Add event listeners for form validation
+formInputs.name.addEventListener("input", (e) => {
+  errors.name = validateName(e.target.value);
+  showError("name", errors.name);
   updateSubmitButton();
 });
 
-subject.addEventListener("input", () => {
-  const value = subject.value;
-
-  if (value === "" || value.length < 10) {
-    subjectError = "Please enter a subject with at least 10 characters.";
-  } else {
-    subjectError = "";
-  }
-
-  if (subjectError) {
-    subjectErrorMessage.style.display = "block";
-    subjectErrorMessage.innerHTML = subjectError;
-  } else {
-    subjectErrorMessage.style.display = "none";
-  }
-
+formInputs.email.addEventListener("input", (e) => {
+  errors.email = validateEmail(e.target.value);
+  showError("email", errors.email);
   updateSubmitButton();
 });
 
-message.addEventListener("input", () => {
-  const value = message.value;
-
-  if (value === "" || value.length < 10) {
-    messageError = "Please enter a message with at least 10 characters.";
-  } else {
-    messageError = "";
-  }
-
-  if (messageError) {
-    messageErrorMessage.style.display = "block";
-    messageErrorMessage.innerHTML = messageError;
-  } else {
-    messageErrorMessage.style.display = "none";
-  }
-
+formInputs.subject.addEventListener("input", (e) => {
+  errors.subject = validateField(e.target.value, "subject");
+  showError("subject", errors.subject);
   updateSubmitButton();
 });
 
-updateSubmitButton();
+formInputs.message.addEventListener("input", (e) => {
+  errors.message = validateField(e.target.value, "message");
+  showError("message", errors.message);
+  updateSubmitButton();
+});
 
-submit.addEventListener("click", (e) => {
+function showError(field, error) {
+  if (error) {
+    errorMessages[field].classList.remove("hidden");
+    errorMessages[field].textContent = error;
+  } else {
+    errorMessages[field].classList.add("hidden");
+  }
+}
+
+// Form Submission
+submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
+  // Validate all fields again in case they were modified without triggering input event
+  errors.name = validateName(formInputs.name.value);
+  errors.email = validateEmail(formInputs.email.value);
+  errors.subject = validateField(formInputs.subject.value, "subject");
+  errors.message = validateField(formInputs.message.value, "message");
+
+  Object.keys(errors).forEach((field) => {
+    showError(field, errors[field]);
+  });
+
+  updateSubmitButton();
+
+  if (Object.values(errors).some((error) => error !== "")) {
+    alert("Please fix the errors in the form");
+    return;
+  }
+
   if (
-    name.value == "" ||
-    email.value == "" ||
-    subject.value == "" ||
-    message.value == ""
+    confirm(
+      `Your message about "${formInputs.subject.value}" will be sent to ${formInputs.email.value}`
+    )
   ) {
-    alert("please fill all fields");
-    submit.disabled = true;
+    alert("Your message was sent successfully!");
+    // Reset form
+    Object.values(formInputs).forEach((input) => (input.value = ""));
+    Object.keys(errors).forEach((field) => {
+      errors[field] = "";
+      showError(field, "");
+    });
+    updateSubmitButton();
   } else {
-    if (
-      confirm(`Your message of ${subject.value} will be sent to ${email.value}`)
-    ) {
-      alert("Your message was sent successfully!");
-    } else {
-      alert("Your message was canceled!");
-    }
+    alert("Message sending canceled");
   }
 });
+
+// Initialize submit button state
+updateSubmitButton();
