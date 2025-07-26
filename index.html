@@ -13,61 +13,61 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.min.css?version=3">
-
+    <!-- <link rel="stylesheet" href="css/style.min.css?version=3"> -->
+    <link href="./output.css" rel="stylesheet">
     <title>Unesco - Home</title>
 </head>
 
 <body class="home-page">
     <header>
-        <div class="main-nav">
+        <div class="main-nav relative flex justify-around items-center bg-blue-600 text-white shadow-2xl">
             <div class="logo">
-                <img loading="lazy" src="assets/images/unesco.svg" alt="unesco_logo">
+                <img class="w-36" loading="lazy" src="assets/images/unesco.svg" alt="unesco_logo">
             </div>
             <nav class="nav">
-                <ul>
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="pages/impacts.html">Impacts</a> </li>
-                    <li><a href="pages/news.html">News</a> </li>
-                    <li><a href="pages/contact-us.html">Contact Us</a></li>
-                    <li><a href="pages/about-us.html">About Us</a></li>
+                <ul class="absolute hidden gap-5 bg-blue-600 w-full left-0 top-20 z-[1000] shadow-2xl">
+                    <li class="active flex items-center relative"><a class="text-white no-underline w-full text-center p-3.5" href="#">Home</a></li>
+                    <li class="flex items-center relative"><a class="text-white no-underline w-full text-center p-3.5" href="pages/impacts.html">Impacts</a> </li>
+                    <li class="flex items-center relative"><a class="text-white no-underline w-full text-center p-3.5" href="pages/news.html">News</a> </li>
+                    <li class="flex items-center relative"><a class="text-white no-underline w-full text-center p-3.5" href="pages/contact-us.html">Contact Us</a></li>
+                    <li class="flex items-center relative"><a class="text-white no-underline w-full text-center p-3.5" href="pages/about-us.html">About Us</a></li>
                 </ul>
             </nav>
-            <div class="right">
-                <label class="theme-switch">
-                    <input type="checkbox" id="theme-toggle">
+            <div class="right flex gap-2.5-">
+                <label class="theme-switch relative inline-block w-7 h-7 border-1 border-blue-200 rounded-full cursor-pointer">
+                    <input type="checkbox" id="theme-toggle" class="opacity-0 w-0 h-0">
                     <span class="slider">
-                        <img class="icon sun-icon" src="assets/icons/sun-solid.svg" alt="light_mode">
-                        <img class="icon moon-icon" src="assets/icons/moon-solid.svg" alt="dark_mode">
+                        <img class="icon absolute w-6 h-6 top-1/2 z-[1] left-0 pl-0 fill-white sun-icon" src="assets/icons/sun-solid.svg" alt="light_mode">
+                        <img class="icon moon-icon absolute w-6 h-6 top-1/2 z-[1] left-0 pl-0 fill-white" src="assets/icons/moon-solid.svg" alt="dark_mode">
                     </span>
                 </label>
                 <div class="search">
-                    <button class="search-button">
-                        <img loading="lazy" src="assets/icons/magnifying-glass-solid.svg" alt="search_icon">
+                    <button class="search-button px-1 pt-1 pb-0 rounded-full bg-transparent border-0 cursor-pointer">
+                        <img loading="lazy" src="assets/icons/magnifying-glass-solid.svg" alt="search_icon" class="w-6 h-6 fill-white">
                     </button>
-                    <form action="" method="post">
-                        <input type="text" class="search-input" placeholder="What are you looking for?">
-                        <input type="submit" value="Search" id="submit-search">
+                    <form class="absolute hidden left-0 w-full top-24 z-10 p-5 my-3 mx-0 bg-blue-600 shadow-2xl" action="" method="post">
+                        <input type="text" class="search-input p-3 border-0 rounded-2xl w-[calc(100% - 80px)] outline-0" placeholder="What are you looking for?">
+                        <input type="submit" value="Search" id="submit-search" class="p-3 border-2 border-white cursor-pointer hover:bg-blue-600 hover:text-white">
                     </form>
                 </div>
-                <button class="mobile-nav-trigger">&equiv;</button>
+                <button class="mobile-nav-trigger border border-white rounded-full bg-transparent py-1 px-4 text-base text-white cursor-pointer">&equiv;</button>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero relative text-center h-[50vh] w-full p-5 flex flex-col justify-center items-center">
             <h1 class="title">Welcom to UNESCO's official website</h1>
             <p class="description">New World Heritage sites nominated; others removed from the in-danger list
             </p>
-            <a href="pages/about-us.html" class="call-to-action">Get to Know us</a>
+            <a href="pages/about-us.html" class="call-to-action border-0 outline-0 shadow-2xl py-3 px-4 m-5 bg-blue-600 text-white z-[1] rounded-2xl cursor-pointer hover:bg-white hover:text-blue-600 hover:outline-2">Get to Know us</a>
         </section>
 
-        <section class="intro">
-            <h1 class="title">
+        <section class="intro p-3">
+            <h1 class="title dark:text-white font-bold mb-5 z-[1] text-center m-12 relative text-gray-900">
                 UNESCO Introduction
             </h1>
-            <div class="description">
+            <div class="description text-white leading-[1.5]">
                 <p>
                     UNESCO is the United Nations organization that promotes cooperation in education, science, culture
                     and communication to
@@ -82,8 +82,8 @@
             </div>
         </section>
 
-        <section class="impact">
-            <h1 class="title">
+        <section class="impact p-3">
+            <h1 class="title dark:text-white font-bold mb-5 z-[1] text-center m-12 relative text-gray-900">
                 UNESCO Impact
             </h1>
 
@@ -91,37 +91,37 @@
         </section>
     </main>
 
-    <footer>
-        <div class="logo">
+    <footer class="bg-blue-600 p-5 relative">
+        <div class="logo text-center mb-7">
             <img loading="lazy" src="assets/images/unesco.svg" alt="unesco_logo">
         </div>
-        <div class="follow-us">
+        <div class="follow-us flex items-center justify-center flex-col">
             <h3>Follow Us</h3>
-            <div class="follow-links">
-                <a href="https://www.instagram.com/unesco/?hl=en"><img loading="lazy" src="assets/icons/instagram-brands.svg"
+            <div class="follow-links flex">
+                <a class="m-1 text-white p-1 rounded-2xl" href="https://www.instagram.com/unesco/?hl=en"><img class="w-6 h-6 fill-white" loading="lazy" src="assets/icons/instagram-brands.svg"
                         alt="instagram"></a>
-                <a href="https://www.linkedin.com/company/unesco"><img loading="lazy" src="assets/icons/linkedin-in-brands.svg"
+                <a class="m-1 text-white p-1 rounded-2xl" href="https://www.linkedin.com/company/unesco"><img class="w-6 h-6 fill-white" loading="lazy" src="assets/icons/linkedin-in-brands.svg"
                         alt="linkedin"></a>
-                <a href="https://www.youtube.com/UNESCO"><img loading="lazy" src="assets/icons/youtube-brands.svg" alt="youtube"></a>
-                <a href="https://x.com/UNESCO"><img loading="lazy" src="assets/icons/x-twitter-brands.svg" alt="x_twitter"></a>
-                <a href="https://www.tiktok.com/@unesco?lang=en"><img loading="lazy" src="assets/icons/tiktok-brands.svg"
+                <a class="m-1 text-white p-1 rounded-2xl" href="https://www.youtube.com/UNESCO"><img class="w-6 h-6 fill-white" loading="lazy" src="assets/icons/youtube-brands.svg" alt="youtube"></a>
+                <a class="m-1 text-white p-1 rounded-2xl" href="https://x.com/UNESCO"><img class="w-6 h-6 fill-white" loading="lazy" src="assets/icons/x-twitter-brands.svg" alt="x_twitter"></a>
+                <a class="m-1 text-white p-1 rounded-2xl" href="https://www.tiktok.com/@unesco?lang=en"><img class="w-6 h-6 fill-white" loading="lazy" src="assets/icons/tiktok-brands.svg"
                         alt="tiktok"></a>
-                <a href="https://whatsapp.com/channel/0029VaHUoHkAO7RCkmguOi1w"><img
+                <a class="m-1 text-white p-1 rounded-2xl" href="https://whatsapp.com/channel/0029VaHUoHkAO7RCkmguOi1w"><img class="w-6 h-6 fill-white"
                         src="assets/icons/whatsapp-brands .svg" alt="whatsapp"></a>
-                <a href="https://bsky.app/profile/unesco.org"><img loading="lazy" src="assets/icons/bluesky-brands.svg"
+                <a class="m-1 text-white p-1 rounded-2xl" href="https://bsky.app/profile/unesco.org"><img class="w-6 h-6 fill-white" loading="lazy" src="assets/icons/bluesky-brands.svg"
                         alt="bluesky"></a>
             </div>
         </div>
-        <div class="grid">
-            <div class="site-map">
-                <h3>Site Map</h3>
+        <div class="grid grid-cols-1 gap-5 m-5 text-center text-blue-600">
+            <div class="site-map m-3 flex flex-col items-center">
+                <h3 class="border-b-2 border-b-white p-3 m-3 text-white">Site Map</h3>
                 <nav>
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="pages/impacts.html">Impacts</a> </li>
-                        <li><a href="pages/news.html">News</a> </li>
-                        <li><a href="pages/contact-us.html">Contact Us</a></li>
-                        <li><a href="pages/about-us.html">About Us</a></li>
+                        <li class="p-3"><a class="no-underline text-white" href="">Home</a></li>
+                        <li class="p-3"><a class="no-underline text-white" href="pages/impacts.html">Impacts</a> </li>
+                        <li class="p-3"><a class="no-underline text-white" href="pages/news.html">News</a> </li>
+                        <li class="p-3"><a class="no-underline text-white" href="pages/contact-us.html">Contact Us</a></li>
+                        <li class="p-3 "><a class="no-underline text-white" href="pages/about-us.html">About Us</a></li>
                     </ul>
                 </nav>
             </div>
@@ -130,15 +130,15 @@
                 <span class="material-symbols-outlined">
                     arrow_circle_up </span>
             </a>
-            <div class="copy-write">
+            <div class="copy-write text-white">
                 UNESCO &copy; 2025
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/main.min.js"></script>
-    <script src="js/index.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
