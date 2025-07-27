@@ -4,6 +4,10 @@ a simple front-end website for a non-profit organization using pure HTML - CSS -
 
 you can find the poject hosted on GitHub.io by visiting https://aymanfali.github.io/non-profit-org/
 
+you can find the dashboard hosted on GitHub.io by visiting https://aymanfali.github.io/non-profit-org/dashboard/index.html
+
+
+
 <hr>
 
 # Snapshots:
