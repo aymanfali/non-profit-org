@@ -26,23 +26,25 @@ const impactsGrid = document.querySelector(".impact-activities");
 
 impactActivities.forEach((item, index) => {
   const element = document.createElement("div");
-  element.className = "item";
+  element.className = "item rounded-2xl shadow-2xl hover:cursor-pointer";
   impactsGrid.appendChild(element);
 
   const impactImage = document.createElement("img");
   impactImage.src = item.image;
   impactImage.alt = item.title;
+  impactImage.className = "rounded-2xl w-full h-[300px] object-cover"
 
   const text = document.createElement("div");
-  text.className = "text";
+  text.className = "text text-text-main";
 
   const impactTitle = document.createElement("p");
-  impactTitle.className = "title";
+  impactTitle.className = "title m-5";
   impactTitle.textContent = item.title;
 
   const impactReadMore = document.createElement("a");
   impactReadMore.className = "read-more";
   impactReadMore.textContent = "Read more ...";
+  impactReadMore.className = "float-right m-5"
   text.append(impactTitle, impactReadMore);
 
   element.append(impactImage, text);
