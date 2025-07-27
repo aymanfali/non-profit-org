@@ -1,10 +1,13 @@
 // Mobile Navigation Toggle
 const mobileNav = document.querySelector(".main-nav nav");
+
 const mobileNavTrigger = document.querySelector(".mobile-nav-trigger");
+
 
 mobileNavTrigger.addEventListener("click", () => {
   mobileNav.classList.toggle("hidden");
 });
+
 
 // Back to Top Button
 const scrollToTopBtn = document.getElementById("back-to-top");
