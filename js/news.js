@@ -28,28 +28,30 @@ const newsGrid = document.querySelector(".news");
 
 news.forEach((item, index) => {
   const element = document.createElement("div");
-  element.className = "item";
+  element.className =
+    "item m-[20px_10px] p-[10px] rounded-[15px] flex flex-col md:flex-row-reverse justify-between items-center shadow-2xl hover:text-horizontal-line cursor-pointer";
   newsGrid.appendChild(element);
 
   const newsImage = document.createElement("img");
   newsImage.src = item.image;
   newsImage.alt = item.title;
+  newsImage.className = "rounded-[10px] h-50 object-cover w-full min-md:w-80"
 
   const newsTitle = document.createElement("p");
   newsTitle.className = "title";
   newsTitle.textContent = item.title;
 
   const newsDate = document.createElement("span");
-  newsDate.className = "date";
+  newsDate.className = "date p-[10px] text-sm text-color-gray";
   newsDate.textContent = item.date;
 
   
 
   const text = document.createElement("div");
-  text.className = "text";
+  text.className = "text p-[10px] flex flex-col";
   
   const newsReadMore = document.createElement("a");
-  newsReadMore.className = "read-more";
+  newsReadMore.className = "read-more text-end text-md";
   newsReadMore.textContent = "Read more ...";
   
   text.append(newsTitle, newsDate, newsReadMore);
