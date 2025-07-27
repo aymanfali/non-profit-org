@@ -1,2 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Playwrite+AU+QLD:wght@100..400&display=swap");
+
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-text-main: #0d1c29;
+  --color-text-sec: #fff;
+  --color-primary: #0066cc;
+  --color-danger: rgb(255, 58, 58);
+  --color-horizontal-line: #0066cc;
+  --color-bg: #ffffff;
+  --color-gray: #bcc1c5;
+}
+
+@layer base {
+  .dark {
+    --color-text-main: #ffffff; 
+  --color-text-sec: #ffffff;
+  --color-primary: #0d1c29;
+  --color-danger: rgb(255, 58, 58);
+  --color-horizontal-line: #0066cc;
+  --color-bg: #0d1c29;
+  --color-gray: #bcc1c5;
+  }
+}
+
+*{
+  scroll-behavior: smooth;
+  transition: 0.5s;
+}

@@ -1,10 +1,9 @@
 // Mobile Navigation Toggle
-const mobileNav = document.querySelector(".main-nav .nav ul");
+const mobileNav = document.querySelector(".main-nav nav");
 const mobileNavTrigger = document.querySelector(".mobile-nav-trigger");
 
 mobileNavTrigger.addEventListener("click", () => {
   mobileNav.classList.toggle("hidden");
-  mobileNav.classList.toggle("block");
 });
 
 // Back to Top Button
@@ -39,11 +38,13 @@ const toggleTheme = document.querySelector("#theme-toggle");
 
 toggleTheme.addEventListener("change", (e) => {
   if (e.target.checked) {
+    console.log("checked");
+    
     localStorage.setItem("theme", "dark");
-    document.documentElement.classList.add("dark");
+    document.body.classList.toggle("dark");
   } else {
     localStorage.setItem("theme", "light");
-    document.documentElement.classList.remove("dark");
+    document.body.classList.remove("dark");
   }
 });
 

@@ -35,7 +35,7 @@ impactActivities.forEach((item, index) => {
   impactImage.className = "rounded-2xl w-full h-[300px] object-cover"
 
   const text = document.createElement("div");
-  text.className = "text text-white";
+  text.className = "text text-text-main";
 
   const impactTitle = document.createElement("p");
   impactTitle.className = "title m-5";
