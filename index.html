@@ -18,14 +18,14 @@
     <title>Unesco - Home</title>
 </head>
 
-<body class="home-page">
-    <header>
-        <div class="main-nav relative flex justify-around items-center bg-blue-600 text-white shadow-2xl">
+<body class="home-page dark:bg-gray-900 max-w-7xl m-auto">
+    <header class="">
+        <div class="main-nav relative flex justify-around items-center bg-blue-600 dark:bg-gray-900 text-white shadow-2xl p-5">
             <div class="logo">
                 <img class="w-36" loading="lazy" src="assets/images/unesco.svg" alt="unesco_logo">
             </div>
-            <nav class="nav">
-                <ul class="absolute hidden gap-5 bg-blue-600 w-full left-0 top-20 z-[1000] shadow-2xl">
+            <nav class="nav hidden md:block">
+                <ul class="absolute md:relative flex flex-col md:flex-row gap-5 bg-blue-600 dark:bg-gray-900 w-full md:w-auto left-0 md:left-auto top-20 md:top-0 z-[1000] shadow-2xl md:shadow-none">
                     <li class="active flex items-center relative"><a class="text-white no-underline w-full text-center p-3.5" href="#">Home</a></li>
                     <li class="flex items-center relative"><a class="text-white no-underline w-full text-center p-3.5" href="pages/impacts.html">Impacts</a> </li>
                     <li class="flex items-center relative"><a class="text-white no-underline w-full text-center p-3.5" href="pages/news.html">News</a> </li>
@@ -33,34 +33,35 @@
                     <li class="flex items-center relative"><a class="text-white no-underline w-full text-center p-3.5" href="pages/about-us.html">About Us</a></li>
                 </ul>
             </nav>
-            <div class="right flex gap-2.5-">
+            <div class="right flex gap-2.5">
                 <label class="theme-switch relative inline-block w-7 h-7 border-1 border-blue-200 rounded-full cursor-pointer">
                     <input type="checkbox" id="theme-toggle" class="opacity-0 w-0 h-0">
-                    <span class="slider">
-                        <img class="icon absolute w-6 h-6 top-1/2 z-[1] left-0 pl-0 fill-white sun-icon" src="assets/icons/sun-solid.svg" alt="light_mode">
-                        <img class="icon moon-icon absolute w-6 h-6 top-1/2 z-[1] left-0 pl-0 fill-white" src="assets/icons/moon-solid.svg" alt="dark_mode">
+                    <span class="slider absolute inset-0">
+                        <img class="icon sun-icon absolute w-6 h-6 top-1/2 -translate-y-1/2 z-10 left-0 pl-2 opacity-100 dark:opacity-0" style="filter: brightness(0) saturate(100%) invert(100%) sepia(97%) saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%);" src="assets/icons/sun-solid.svg" alt="light_mode">
+                        <img class="icon moon-icon absolute w-6 h-6 top-1/2 -translate-y-1/2 z-10 left-0 pl-2 opacity-0 dark:opacity-100" style="filter: brightness(0) saturate(100%) invert(100%) sepia(97%) saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%);" src="assets/icons/moon-solid.svg" alt="dark_mode">
                     </span>
                 </label>
                 <div class="search">
                     <button class="search-button px-1 pt-1 pb-0 rounded-full bg-transparent border-0 cursor-pointer">
-                        <img loading="lazy" src="assets/icons/magnifying-glass-solid.svg" alt="search_icon" class="w-6 h-6 fill-white">
+                        <img loading="lazy" src="assets/icons/magnifying-glass-solid.svg" alt="search_icon" class="w-6 h-6 fill-white" style="filter: brightness(0) saturate(100%) invert(100%) sepia(97%) saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%);">
                     </button>
-                    <form class="absolute hidden left-0 w-full top-24 z-10 p-5 my-3 mx-0 bg-blue-600 shadow-2xl" action="" method="post">
-                        <input type="text" class="search-input p-3 border-0 rounded-2xl w-[calc(100% - 80px)] outline-0" placeholder="What are you looking for?">
-                        <input type="submit" value="Search" id="submit-search" class="p-3 border-2 border-white cursor-pointer hover:bg-blue-600 hover:text-white">
+                    <form class="absolute hidden left-0 w-full top-24 z-50 p-5 my-3 mx-0 bg-blue-600 shadow-2xl" action="" method="post">
+                        <input type="text" class="search-input p-3 border-0 rounded-2xl w-11/12 outline-0 bg-white text-black" placeholder="What are you looking for?">
+                        <input type="submit" value="Search" id="submit-search" class="p-3 border-2 border-white cursor-pointer hover:bg-blue-600 hover:text-white rounded-2xl">
                     </form>
                 </div>
-                <button class="mobile-nav-trigger border border-white rounded-full bg-transparent py-1 px-4 text-base text-white cursor-pointer">&equiv;</button>
+                <button class="mobile-nav-trigger md:hidden border border-white rounded-full bg-transparent p-1.5 text-base text-white cursor-pointer">&equiv;</button>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="hero relative text-center h-[50vh] w-full p-5 flex flex-col justify-center items-center">
-            <h1 class="title">Welcom to UNESCO's official website</h1>
-            <p class="description">New World Heritage sites nominated; others removed from the in-danger list
+        <section class="hero relative text-center bg-[url('../assets/images/story_whc_mafagascar.JPG.webp')] h-[50vh] w-full p-5 flex flex-col justify-center items-center">
+            <div class="absolute inset-0 bg-blue-600 dark:bg-gray-600 opacity-50"></div>
+            <h1 class="title font-bold mb-5 text-black dark:text-white z-10">Welcom to UNESCO's official website</h1>
+            <p class="description text-black dark:text-white z-10">New World Heritage sites nominated; others removed from the in-danger list
             </p>
-            <a href="pages/about-us.html" class="call-to-action border-0 outline-0 shadow-2xl py-3 px-4 m-5 bg-blue-600 text-white z-[1] rounded-2xl cursor-pointer hover:bg-white hover:text-blue-600 hover:outline-2">Get to Know us</a>
+            <a href="pages/about-us.html" class="call-to-action border-0 outline-0 shadow-2xl py-3 px-4 m-5 bg-blue-600 text-white z-[1] rounded-[15px] cursor-pointer hover:bg-white hover:text-blue-600 hover:outline-2">Get to Know us</a>
         </section>
 
         <section class="intro p-3">
@@ -87,16 +88,16 @@
                 UNESCO Impact
             </h1>
 
-            <div class="impact-activities"></div>
+            <div class="impact-activities grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 m-5 "></div>
         </section>
     </main>
 
-    <footer class="bg-blue-600 p-5 relative">
+    <footer class="bg-blue-600 dark:bg-gray-900 p-5 relative">
         <div class="logo text-center mb-7">
-            <img loading="lazy" src="assets/images/unesco.svg" alt="unesco_logo">
+            <img class="m-auto" loading="lazy" src="assets/images/unesco.svg" alt="unesco_logo">
         </div>
         <div class="follow-us flex items-center justify-center flex-col">
-            <h3>Follow Us</h3>
+            <h3 class="dark:text-white font-bold">Follow Us</h3>
             <div class="follow-links flex">
                 <a class="m-1 text-white p-1 rounded-2xl" href="https://www.instagram.com/unesco/?hl=en"><img class="w-6 h-6 fill-white" loading="lazy" src="assets/icons/instagram-brands.svg"
                         alt="instagram"></a>
@@ -126,7 +127,7 @@
                 </nav>
             </div>
             <hr>
-            <a href="#" id="back-to-top">
+            <a href="#" id="back-to-top" class="hidden fixed bottom-0 right-0 bg-blue-600 dark:bg-gray-900 text-white p-4 pb-3 m-8 rounded-full border border-blue-600 shadow-2xl z-[1000]">
                 <span class="material-symbols-outlined">
                     arrow_circle_up </span>
             </a>

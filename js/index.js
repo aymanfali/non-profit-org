@@ -26,7 +26,7 @@ const impactsGrid = document.querySelector(".impact-activities");
 
 impactActivities.forEach((item, index) => {
   const element = document.createElement("div");
-  element.className = "item rounded shadow-2xl";
+  element.className = "item rounded-2xl shadow-2xl hover:cursor-pointer";
   impactsGrid.appendChild(element);
 
   const impactImage = document.createElement("img");
@@ -35,16 +35,16 @@ impactActivities.forEach((item, index) => {
   impactImage.className = "rounded-2xl w-full h-[300px] object-cover"
 
   const text = document.createElement("div");
-  text.className = "text";
+  text.className = "text text-white";
 
   const impactTitle = document.createElement("p");
-  impactTitle.className = "title mb-5 pb-4 leading-1";
+  impactTitle.className = "title m-5";
   impactTitle.textContent = item.title;
 
   const impactReadMore = document.createElement("a");
   impactReadMore.className = "read-more";
   impactReadMore.textContent = "Read more ...";
-  impactReadMore.className = "float-right mb-2"
+  impactReadMore.className = "float-right m-5"
   text.append(impactTitle, impactReadMore);
 
   element.append(impactImage, text);
