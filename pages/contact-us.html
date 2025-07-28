@@ -13,132 +13,154 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.min.css?version=3">
+    <link rel="stylesheet" href="../output.css">
 
     <title>Unesco - Contact Us</title>
 </head>
 
-<body class="impacts-page">
-    <header>
-        <div class="main-nav">
+<body class="bg-bg text-text-main max-w-7xl m-auto">
+    <header class="">
+        <div class="main-nav relative flex justify-around items-center bg-primary text-text-sec shadow-2xl p-5">
             <div class="logo">
-                <img loading="lazy" src="../assets/images/unesco.svg" alt="unesco_logo">
+                <img class="w-36" loading="lazy" src="../assets/images/unesco.svg" alt="unesco_logo">
             </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="impacts.html">Impacts</a> </li>
-                    <li><a href="news.html">News</a> </li>
-                    <li class="active"><a href="#">Contact Us</a></li>
-                    <li><a href="about-us.html">About Us</a></li>
+            <nav class="nav hidden md:block">
+                <ul
+                    class="absolute md:relative flex flex-col md:flex-row gap-5 bg-primary w-full md:w-auto left-0 md:left-auto top-20 md:top-0 z-[1000] shadow-2xl md:shadow-none">
+                    <li class="active flex items-center relative"><a
+                            class="text-text-sec no-underline w-full text-center p-3.5" href="../index.html">Home</a>
+                    </li>
+                    <li class="flex items-center relative"><a
+                            class="text-text-sec no-underline w-full text-center p-3.5" href="impacts.html">Impacts</a>
+                    </li>
+                    <li class="flex items-center relative"><a
+                            class="text-text-sec no-underline w-full text-center p-3.5" href="news.html">News</a> </li>
+                    <li class="flex items-center relative"><a
+                            class="text-text-sec no-underline w-full text-center p-3.5" href="contact-us.html">Contact
+                            Us</a></li>
+                    <li class="flex items-center relative"><a
+                            class="text-text-sec no-underline w-full text-center p-3.5" href="about-us.html">About
+                            Us</a></li>
                 </ul>
             </nav>
-            <div class="right">
-                <label class="theme-switch">
-                    <input type="checkbox" id="theme-toggle">
-                    <span class="slider">
-                        <img class="icon sun-icon" src="../assets/icons/sun-solid.svg" alt="light_mode">
-                        <img class="icon moon-icon" src="../assets/icons/moon-solid.svg" alt="dark_mode">
+            <div class="right flex gap-2.5 items-center">
+                <label class="theme-switch relative inline-block w-7 h-7  cursor-pointer">
+                    <input type="checkbox" id="theme-toggle" class="opacity-0 w-0 h-0">
+                    <span class="slider absolute inset-0">
+                        <img class="icon sun-icon absolute w-4 h-4 top-1/2 -translate-y-1/2 z-10 left-0 opacity-100 dark:opacity-0"
+                            style="filter: brightness(0) saturate(100%) invert(100%) sepia(97%) saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%);"
+                            src="../assets/icons/sun-solid.svg" alt="light_mode">
+                        <img class="icon moon-icon absolute w-4 h-4 top-1/2 -translate-y-1/2 z-10 left-0 opacity-0 dark:opacity-100"
+                            style="filter: brightness(0) saturate(100%) invert(100%) sepia(97%) saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%);"
+                            src="../assets/icons/moon-solid.svg" alt="dark_mode">
                     </span>
                 </label>
                 <div class="search">
-                    <button class="search-button">
-                        <img loading="lazy" src="../assets/icons/magnifying-glass-solid.svg" alt="search_icon">
+                    <button class="search-button px-1 pt-1 pb-0 rounded-full bg-transparent border-0 cursor-pointer">
+                        <img loading="lazy" src="../assets/icons/magnifying-glass-solid.svg" alt="search_icon"
+                            class="w-4 h-4"
+                            style="filter: brightness(0) saturate(100%) invert(100%) sepia(97%) saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%);">
                     </button>
-                    <form action="" method="post">
-                        <input type="text" class="search-input" placeholder="What are you looking for?">
-                        <input type="submit" value="Search" id="submit-search">
+                    <form class="absolute hidden left-0 w-full top-24 z-50 p-5 my-3 mx-0 bg-primary shadow-2xl"
+                        action="" method="post">
+                        <input type="text"
+                            class="search-input min-w-80 p-3 border-0 rounded-md outline-0 bg-white text-black"
+                            placeholder="What are you looking for?">
+                        <input type="submit" value="Search" id="submit-search"
+                            class="p-2.5 border-2 border-text-sec text-text-sec cursor-pointer hover:bg-text-sec hover:text-primary hover:outline-2 rounded-md">
                     </form>
                 </div>
-                <button class="mobile-nav-trigger">&equiv;</button>
+                <button
+                    class="mobile-nav-trigger md:hidden bg-transparent text-2xl mb-2 text-text-sec cursor-pointer">&equiv;</button>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="hero">
-            <h1 class="title">Contact Us</h1>
-            <p class="description">
-            </p>
+        <section
+            class="hero relative text-center bg-[url('../assets/images/story_whc_mafagascar.JPG.webp')] h-[50vh] w-full p-5 flex flex-col justify-center items-center">
+            <div class="absolute inset-0 bg-primary opacity-50"></div>
+            <h1 class="title font-bold mb-5 text-text-sec z-10">Contact Us</h1>
         </section>
 
 
-        <section class="contact" id="contact-us">
-            <form class="form" action="" method="post">
-                <div class="field">
-                    <img class="icon" src="../assets/icons/user-solid.svg" alt="name">
-                    <input class="input" type="text" name="name" id="name" placeholder="Your Name" required>
+        <section class="contact m-[0_15%] p-5 flex justify-center flex-col" id="contact-us">
+            <form class="form relative" action="" method="post">
+                <div class="field relative block">
+                    <img class="icon w-6 h-6 absolute left-[-25px] top-[15px]" src="../assets/icons/user-solid.svg" alt="name">
+                    <input class="input p-[10px] outline-0 rounded-[20px] shadow-2xl border-0 m-[5px] w-full bg-bg text-text-main" type="text" name="name" id="name" placeholder="Your Name" required>
                 </div>
                 <p class="name-error">invalid name</p>
-                <div class="field">
-                    <img class="icon" src="../assets/icons/envelope-solid.svg " alt="email">
-                    <input class="input" type="email" name="email" id="email" placeholder="Your email" required>
+                <div class="field relative block">
+                    <img class="icon w-6 h-6 absolute left-[-25px] top-[15px]" src="../assets/icons/envelope-solid.svg " alt="email">
+                    <input class="input p-[10px] outline-0 rounded-[20px] shadow-2xl border-0 m-[5px] w-full bg-bg text-text-main" type="email" name="email" id="email" placeholder="Your email" required>
                 </div>
                 <p class="email-error"></p>
-                <div class="field">
-                    <img class="icon" src="../assets/icons/comment-regular.svg " alt="subject">
-                    <input class="input" type="text" name="subject" id="subject" placeholder="Your subject" required>
+                <div class="field relative block">
+                    <img class="icon w-6 h-6 absolute left-[-25px] top-[15px]" src="../assets/icons/comment-regular.svg " alt="subject">
+                    <input class="input p-[10px] outline-0 rounded-[20px] shadow-2xl border-0 m-[5px] w-full bg-bg text-text-main" type="text" name="subject" id="subject" placeholder="Your subject" required>
                 </div>
                 <p class="subject-error"></p>
-                <div class="field">
-                    <img class="icon" src="../assets/icons/message-solid.svg " alt="message">
-                    <textarea rows="5" class="input" name="message" id="message" placeholder="Your message"
+                <div class="field relative block">
+                    <img class="icon w-6 h-6 absolute left-[-25px] top-[15px]" src="../assets/icons/message-solid.svg " alt="message">
+                    <textarea rows="5" class="input p-[10px] outline-0 rounded-[20px] shadow-2xl border-0 m-[5px] w-full bg-bg text-text-main resize-none" name="message" id="message" placeholder="Your message"
                         required></textarea>
                 </div>
                 <p class="message-error"></p>
-                <button type="submit" class="submit">Send</button>
+                <button type="submit" class="submit p-[10px_20px] m-[10px] cursor-pointer border border-primary outline-0 bg-text-sec text-primary rounded-[20px] hover:bg-primary hover:text-text-sec hover:outline hover:outline-text-main disabled:cursor-not-allowed disabled:bg-gray disabled:text-danger">Send</button>
             </form>
         </section>
     </main>
 
-    <footer>
-        <div class="logo">
-            <img loading="lazy" src="../assets/images/unesco.svg" alt="unesco_logo">
+    <footer class="bg-primary p-5 relative">
+        <div class="logo text-center mb-7">
+            <img class="m-auto" loading="lazy" src="../assets/images/unesco.svg" alt="unesco_logo">
         </div>
-        <div class="follow-us">
-            <h3>Follow Us</h3>
-            <div class="follow-links">
-                <a href="https://www.instagram.com/unesco/?hl=en"><img loading="lazy" src="../assets/icons/instagram-brands.svg"
-                        alt="instagram"></a>
-                <a href="https://www.linkedin.com/company/unesco"><img loading="lazy" src="../assets/icons/linkedin-in-brands.svg"
-                        alt="linkedin"></a>
-                <a href="https://www.youtube.com/UNESCO"><img loading="lazy" src="../assets/icons/youtube-brands.svg"
-                        alt="youtube"></a>
-                <a href="https://x.com/UNESCO"><img loading="lazy" src="../assets/icons/x-twitter-brands.svg" alt="x_twitter"></a>
-                <a href="https://www.tiktok.com/@unesco?lang=en"><img loading="lazy" src="../assets/icons/tiktok-brands.svg"
-                        alt="tiktok"></a>
-                <a href="https://whatsapp.com/channel/0029VaHUoHkAO7RCkmguOi1w"><img
-                        src="../assets/icons/whatsapp-brands .svg" alt="whatsapp"></a>
-                <a href="https://bsky.app/profile/unesco.org"><img loading="lazy" src="../assets/icons/bluesky-brands.svg"
-                        alt="bluesky"></a>
+        <div class="follow-us flex items-center justify-center flex-col">
+            <h3 class="border-b-2 text-text-sec border-b-text-sec font-bold">Follow Us</h3>
+            <div class="follow-links flex">
+                <a class="m-1 bg-text-sec p-1 rounded-sm" href="https://www.instagram.com/unesco/?hl=en"><img
+                        class="w-6 h-6" loading="lazy" src="../assets/icons/instagram-brands.svg" alt="instagram"></a>
+                <a class="m-1 bg-text-sec p-1 rounded-sm" href="https://www.linkedin.com/company/unesco"><img
+                        class="w-6 h-6" loading="lazy" src="../assets/icons/linkedin-in-brands.svg" alt="linkedin"></a>
+                <a class="m-1 bg-text-sec p-1 rounded-sm" href="https://www.youtube.com/UNESCO"><img class="w-6 h-6"
+                        loading="lazy" src="../assets/icons/youtube-brands.svg" alt="youtube"></a>
+                <a class="m-1 bg-text-sec p-1 rounded-sm" href="https://x.com/UNESCO"><img class="w-6 h-6" loading="lazy"
+                        src="../assets/icons/x-twitter-brands.svg" alt="x_twitter"></a>
+                <a class="m-1 bg-text-sec p-1 rounded-sm" href="https://www.tiktok.com/@unesco?lang=en"><img class="w-6 h-6"
+                        loading="lazy" src="../assets/icons/tiktok-brands.svg" alt="tiktok"></a>
+                <a class="m-1 bg-text-sec p-1 rounded-sm" href="https://whatsapp.com/channel/0029VaHUoHkAO7RCkmguOi1w"><img
+                        class="w-6 h-6" src="../assets/icons/whatsapp-brands .svg" alt="whatsapp"></a>
+                <a class="m-1 bg-text-sec p-1 rounded-sm" href="https://bsky.app/profile/unesco.org"><img class="w-6 h-6"
+                        loading="lazy" src="../assets/icons/bluesky-brands.svg" alt="bluesky"></a>
             </div>
         </div>
-        <div class="grid">
-            <div class="site-map">
-                <h3>Site Map</h3>
+        <div class="grid grid-cols-1 gap-5 m-5 text-center text-blue-600">
+            <div class="site-map m-3 flex flex-col items-center">
+                <h3 class="border-b-2 border-b-white p-3 m-3 text-white">Site Map</h3>
                 <nav>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="impacts.html">Impacts</a> </li>
-                        <li><a href="news.html">News</a> </li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
+                        <li class="p-3"><a class="no-underline text-white" href="../index.html">Home</a></li>
+                        <li class="p-3"><a class="no-underline text-white" href="impacts.html">Impacts</a> </li>
+                        <li class="p-3"><a class="no-underline text-white" href="contact-us.html">Contact Us</a></li>
+                        <li class="p-3 "><a class="no-underline text-white" href="about-us.html">About Us</a></li>
                     </ul>
                 </nav>
             </div>
             <hr>
-            <a href="#" id="back-to-top">
+            <a href="#" id="back-to-top"
+                class="hidden fixed bottom-0 right-0 bg-blue-600 dark:bg-gray-900 text-white p-4 pb-3 m-8 rounded-full border border-blue-600 shadow-2xl z-[1000]">
                 <span class="material-symbols-outlined">
                     arrow_circle_up </span>
             </a>
-            <div class="copy-write">
+            <div class="copy-write text-white">
                 UNESCO &copy; 2025
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="../js/main.min.js"></script>
+    <script src="../js/main.js"></script>
 
 </body>
 
