@@ -51,6 +51,6 @@ impactActivities.forEach((item, index) => {
 
   element.addEventListener("click", () => {
     const impactId = index;
-    window.location.href = `pages/impact-details.html?id=${impactId}`;
+    window.location.href = `/pages/impact-details.html?id=${impactId}`;
   });
 });

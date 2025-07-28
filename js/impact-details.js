@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     impactImage.style.backgroundSize = "cover";
     impactImage.style.backgroundPosition = "center";
     impactContent.textContent = selectedImpact.content;
+    
   }
 });
 
