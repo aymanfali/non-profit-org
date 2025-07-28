@@ -3,11 +3,9 @@ const mobileNav = document.querySelector(".main-nav nav");
 
 const mobileNavTrigger = document.querySelector(".mobile-nav-trigger");
 
-
 mobileNavTrigger.addEventListener("click", () => {
   mobileNav.classList.toggle("hidden");
 });
-
 
 // Back to Top Button
 const scrollToTopBtn = document.getElementById("back-to-top");
@@ -42,7 +40,7 @@ const toggleTheme = document.querySelector("#theme-toggle");
 toggleTheme.addEventListener("change", (e) => {
   if (e.target.checked) {
     console.log("checked");
-    
+
     localStorage.setItem("theme", "dark");
     document.body.classList.toggle("dark");
   } else {
@@ -144,10 +142,12 @@ formInputs.message.addEventListener("input", (e) => {
 
 function showError(field, error) {
   if (error) {
-    errorMessages[field].classList.remove("hidden");
+    errorMessages[field].className =
+      "block p-[5px_10px_5px_10px] text-start m-[0_0_10px_10px] text-danger text-sm";
     errorMessages[field].textContent = error;
   } else {
-    errorMessages[field].classList.add("hidden");
+    errorMessages[field].className =
+      "hidden";
   }
 }
 
