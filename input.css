@@ -30,3 +30,14 @@
   scroll-behavior: smooth;
   transition: 0.5s;
 }
+
+[class$="-error"] {
+  /* @apply hidden p-[5px_10px_5px_10px] text-start m-[0_0_10px_10px] text-danger text-sm; */
+display: none;
+  /* 
+  padding: 5px 10px 5px 10px;
+  text-align: start;
+  margin: 0 0 10px 10px;
+  color: var(--color-danger);
+  font-size: small; */
+}
